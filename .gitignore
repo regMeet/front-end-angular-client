@@ -28,7 +28,14 @@ node_modules
 
 # Maven
 target
-# Eclipse
+
+# Eclipse - idea - IDE
 .classpath
 .project
 .settings/
+.idea/
+
+# NPM
+node
+# Bower
+src/main/webapp/bower_components/
