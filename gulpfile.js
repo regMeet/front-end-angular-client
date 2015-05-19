@@ -88,6 +88,8 @@ gulp.task('copy-templates', function() {
  */
 gulp.task('watch', function() {
     gulp.watch([paths.html_templates], ['copy-templates']);
+    gulp.watch([paths.app_scripts], ['keep-index-html']);
+    gulp.watch([paths.app_scripts], ['minify-css-js']);
     
     // gulp-plumber
     // https://github.com/floatdrop/gulp-plumber
@@ -110,4 +112,5 @@ gulp.on('err', function (err) {
 });
 
 gulp.task('build', ['lint', 'keep-index-html', 'minify-css-js', 'copy-templates']);
+gulp.task('default', ['build']);
 gulp.task('start', ['webserver', 'watch']);
